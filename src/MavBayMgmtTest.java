@@ -21,10 +21,15 @@
  */
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map.Entry;
 import java.util.Scanner;
 
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
+import javax.swing.text.html.HTMLDocument.Iterator;
 
 
 
@@ -47,6 +52,7 @@ public class MavBayMgmtTest implements Proj3Constants, DateConstants {
     private static PrintWriter foutput;     //for writing to a file
     
 
+    
     //define other variables as needed
 
     //Note that we are using a DIFFERENT method for reading input file;
@@ -165,7 +171,10 @@ public class MavBayMgmtTest implements Proj3Constants, DateConstants {
             Scanner scan= new Scanner(System.in);
             String menuScan=EMPTY_STRING;
             Enterprise myEnt= new Enterprise(enterpriseName);
-            
+            ArrayList<Bid> myBids = new ArrayList<Bid>();
+            //Added for Proj5 to accept all bids valid/not valid
+            HashMap<Integer, ArrayList<Bid>> myMap = new HashMap<Integer, ArrayList<Bid>>();
+            //Added for Proj5 to accept all bids valid/not valid
             
             while ( (!inputLine.toLowerCase().equals("end"))){
     String[] chopMenuLine = inputLine.split("!");
@@ -340,6 +349,7 @@ public class MavBayMgmtTest implements Proj3Constants, DateConstants {
                 Bid bid= new Bid(buserId,bitemId,bidTime,bidAmount,bidQty);                
                 //add bid checks for validity
                 myEnt.addBid(bid);
+                myBids.add(bid); //Added for project5 for sorting.
                 //prints current bids on item so far
                 myEnt.printBids(bitemId,foutput);
                     break;
@@ -380,28 +390,62 @@ public class MavBayMgmtTest implements Proj3Constants, DateConstants {
             case 19: // generate seller report
                 int sid = Integer.parseInt(chopMenuLine[ONEI]);//sellerID
                 int syear = Integer.parseInt(chopMenuLine[TWOI]);//Year
-                foutput.println(myEnt.soldItemsBySeller(syear,sid));
+                foutput.println(myEnt.soldItemsBySeller(syear,sid));            
                     break;
-            case 0: //process exit
-            	try {
-        		    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-        		        if ("Nimbus".equals(info.getName())) {
-        		            UIManager.setLookAndFeel(info.getClassName());
-        		            break;
-        		        }
-        		    }
-        		} catch (Exception e) {
-        		    // If Nimbus is not available, fall back to cross-platform
-        		    try {
-        		        UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-        		    } catch (Exception ex) {
-        		        
-        		    }
-        		}
+                    
+            case 20://Sort BidArrayList on DateTime (myBids)
+            	    System.out.println("Bids before Sort..");
+            	    for (int i=0;i<myBids.size();i++){
+            	  	  System.out.println(myBids.get(i));
+            	    }
+            	    System.out.println("Bids after Sort..");
+            	    Collections.sort(myBids);
+            	    for (int i=0;i<myBids.size();i++){
+              	  	  System.out.println(myBids.get(i));
+              	    }    	
             	
-              MainMenu myMenu= new MainMenu(myEnt); //Start of GUI
-             
-              //System.out.println(myEnt.sGetSoldItemBids(0));
+            	     break;
+            	     
+            case 21:
+            	    //Add all customerID's and their bids
+            	    //Loop through customers then find there bids.
+            	    String custID = chopMenuLine[ONEI];
+                    
+                    
+            	    for(int i=0; i<myEnt.getCustomers().size();i++){
+            	    	ArrayList<Bid> tempBids = new ArrayList<Bid>();
+            	    	for(int j=0;j<myBids.size();j++){
+            	    		//If customer ID is same as Bid ID add it
+            	    		if(myEnt.getCustomers().get(i).getID()==myBids.get(j).getUserID()){
+            	    			tempBids.add(myBids.get(j));//add the bid to temp
+            	    		}
+            	    	}
+            	    	//add customer and their bids to Map
+            	    	myMap.put(myEnt.getCustomers().get(i).getID(), tempBids);
+            	    }
+            	    
+            	    if(custID.equals("*")){//print all Key Value pairs
+            	    	for(Entry<Integer, ArrayList<Bid>>  Entry: myMap.entrySet()){
+            	    		Collections.sort(Entry.getValue());
+            	    		Collections.reverse(Entry.getValue());
+                	    	System.out.println("Key="+ Entry.getKey()+", value="+Entry.getValue());
+                	    		
+                	    	}
+            	    }else{//print unique Key Value pair
+            	    	int keyVal= Integer.parseInt(custID);
+            	    	System.out.println("Printing Customer ID"+custID+" Key value pairs");
+            	    	if(myMap.get(keyVal)==null){            	    		
+            	    		System.out.println("Key: "+keyVal+ " Does not exist");
+            	    	}else{
+            	    		Collections.sort(myMap.get(keyVal));//sort it then..
+            	    		Collections.reverse(myMap.get(keyVal));//reverse it to get Ascending order since comparator is decending.
+            	    		System.out.println("Key= "+keyVal+" "+ myMap.get(keyVal));
+            	    	}            	    	
+            	    }
+       	             break;	     
+                    
+            case 0: //process exit
+            	
               
                     break;
             default: System.out.printf("unknown command: %s: SKIPPED\n", inputLine);

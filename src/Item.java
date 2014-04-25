@@ -15,6 +15,7 @@
 import java.io.*;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Locale;
 import java.util.Scanner;
 public class Item implements Proj3Constants,DateConstants{
@@ -839,6 +840,8 @@ public String getDescription(){
     myItem5.addBid(bid12);
     System.out.println("Cost: after bid 12"+myItem5.getCostCollected());
     myItem5.printBid();
+    
+    
     
   }
   

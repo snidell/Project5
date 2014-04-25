@@ -1,0 +1,194 @@
+// each item is separated by a ! do not add extra white spaces before or after separators
+// Enterprise  Name
+MavBay Corporation
+//actual # employees -- not needed any more!
+// EMPLOYEE DETAILS: 1 LINE EACH; id is system generated!!
+// emp type, fname, lname, dob, gender, hire date, release date, monthly base // salary
+13!WD!katy!dough!07-01-1982!female!11-09-2006!null!1000.00!75.00
+13!ACCT!sara!Longbottom!11-13-1980!male!01-02-2010!null!800.00!100.00
+13!WD!john!smith!04-01-1978!male!04-07-2007!null!1000.00!96.00
+13!CUST_SUPPORT!james!bond!12-10-1976!male!02-20-2005!null!800.00!20.00
+13!CUST_SUPPORT!anne!haathaway!08-13-1984!female!10-24-2006!null!2000.00!25.00
+13!ACCT!dave!richardson!04-15-1964!male!11-12-2005!null!1000.00!80.00
+//item details: 1 LINE PER item AS GIVEN BELOW as menu; starts from 100 onwards
+//Itemid!item category!item name!sale type!qty!Item
+//condition!Minimum starting bid!bid Increment!Reserve
+//amount!Start date and time in CST!Number of days!Seller
+//id!seller feedback score!item description
+11!100!Photography & Camera!Camera!FIX_PRICE!5!new!0.0!0.00!729.95!2-9-2013,21:49:00!7!1!9000!Canon EOS Rebel T3I 600D Body+4 Lens Kit 18-55 IS +75-300 +24GB Flash & More
+11!101!photography & camera!camera!AUCTION!10!used!300.00!20.00!700.00!2-10-2013,10:30:00!3!1!9000!Nikon D5100 16.2 MP Digital SLR Camera - Black Kit w/ AF-S VR 18-55mm
+11!102!photography & camera!camera!BOTH!5!new!100.00!10.00!160.00!2-11-2013,10:00:00!5!4!3000!Panasonic LUMIX DMC-ZS25 / DMC-TZ35 16.1 MP 20x Optical Zoom Digital Camera
+11!200!jewellery & watches!watch!FIX_PRICE!3!used!0.00!0.0!99.85!2-14-2013,9:30:00!2!4!4000!Invicta 1774 Men's Pro Diver Gold Tone Stainless Steel Chronograph Dive Watch
+11!201!jewellery & watches!watch!AUCTION!3!new!30.45!5.00!84.99!2-15-2013,19:30:00!4!3!3000!Invicta Specialty Chronograph Tachymeter Black Dial Stnls Steel NEW Mens Watch
+11!202!jewellery & watches!watch!BOTH!10!new!25.45!10.00!94.45!2-9-2013,23:00:00!2!6!3000!Invicta Specialty Chronograph Tachymeter Black Dial Stnls Steel NEW Mens Watch
+11!300!clothing & accessories!shoe!BOTH!5!new!10.00!5.00!75.00!2-11-2013,00:00:59!3!7!1000!Nike Air Jordan Alpha Mens 12 Basketball Shoes. Blue Black White 392813-103
+11!301!clothing & accessories!shoe!AUCTION!5!new!10.00!10.00!109.00!2-11-2013,12:00:00!3!7!1000!Reebok Realflex Transition 2 mens athletic running shoes
+11!302!clothing & accessories!shoe!FIX_PRICE!2!used!0.00!0.00!44.99!2-16-2013,12:00:00!2!7!6000!Adidas Originals Gazelle Men's Shoes Sneakers Canvas
+11!303!clothing & accessories!shoe!AUCTION!2!new!10.00!5.00!50.00!2-16-2013,11:00:00!2!7!6000!Adidas Originals Gazelle Men's Shoes Sneakers Canvas
+// customers 1 line per user; from 1 to 99
+// First Name!Last Name!User Id!Date of birth!gender!Address!State!Zipcode
+12!1!Judy!Thompson!2-11-1965!FeMale!420 Love Lane Arlington!TX!76010
+12!2!Joseph!richard!2-27-1991!male!1301 Mitchel Avenue!TX!76010
+12!3!Subhash!Chand!1-14-1980!MALE!620 Michigan Avenue!DC!20064
+12!4!David!Gotcher!3-1-1978!MaLe!320 East park row!DC!20098
+12!5!Javed!Ali!8-30-1987!male!120 mesquite row!TX!76013
+12!6!Barney!Stinson!1-1-1965!Female!701 Washington square!NY!10012
+12!7!Ted!Mosby!9-23-1966!Male!702 Washington drive!NY!10013
+12!8!Charlie!Sheen!11-30-1964!male!1915 Davis Trail!CA!94704
+12!9!Jami!Pattinson!1-2-1993!female!176 berkeley blvd!CA!92345
+12!10!Tobi!Wan!8-31-1988!male!1200 Dallas Parkway!TX!76154
+//
+13!CUST_SUPPORT!Julia!Roberts!08-13-1970!female!10-24-2000!null!1699.00!21.00
+//Bids by customers; from 1st to last bid; each item at a time!
+//Item id!User id!dateTime!bid amount!quantity
+//more itmes for 2013
+11!400!Photography & Camera!Camera!FIX_PRICE!10!new!0.0!0.00!500.00!2-9-2014,21:49:00!7!1!9000!Canon EOS Rebel T3I 600D Body +75-300 +24GB Flash & More
+11!401!photography & camera!camera!AUCTION!10!used!300.00!20.00!600.00!2-10-2014,10:30:00!3!1!9000!Nikon D5100 16.2 MP Digital SLR Camera - Black Kit w/ AF-S VR 18-55mm
+11!402!photography & camera!camera!BOTH!5!new!100.00!10.00!200.00!2-11-2014,10:00:00!5!4!3000!Panasonic LUMIX DMC FZ 40 16.1 MP 20x Optical Zoom Digital Camera
+11!500!jewellery & watches!watch!FIX_PRICE!2!used!0.00!0.0!99.85!2-14-2014,9:30:00!2!4!4000!Invicta 1774 Men's Pro Diver Gold Tone Chronograph Dive Watch
+11!501!jewellery & watches!watch!AUCTION!3!new!20.00!5.00!84.99!2-15-2014,19:30:00!4!3!3000!Invicta Chronograph Black Dial Stnls Steel NEW Mens Watch
+11!502!jewellery & watches!watch!BOTH!10!new!125.45!10.00!194.45!2-9-2014,23:00:00!2!6!3000!Invicta Specialty Chronograph Black Dial Stnls Steel NEW Mens Watch
+11!600!clothing & accessories!shoe!BOTH!5!new!50.00!5.00!115.00!2-11-2014,00:00:59!3!7!1000!Nike Air Jordan Alpha Mens 12 Basketball Shoes. Blue Black White 392813-103
+11!601!clothing & accessories!shoe!AUCTION!6!new!20.00!10.00!119.00!2-11-2014,12:00:00!3!7!1000!Reebok Realflex Transition 2 mens athletic running shoes
+11!602!clothing & accessories!shoe!FIX_PRICE!2!used!0.00!0.00!55.99!2-16-2014,12:00:00!2!7!6000!Adidas Originals Gazelle Men's Shoes Sneakers Canvas
+// customers 1 line per user; from 1 to 99
+15!5!4-23-2014
+14!100!1!2-12-2013,00:00:45!729.95!1
+14!100!9!2-15-2013,10:00:45!729.95!1
+14!100!2!2-13-2013,13:45:00!729.95!2
+16!1!5!20
+16!2!5!30
+16!3!5!10
+16!4!5!3000
+16!5!5!4500
+16!6!5!27
+16!7!5!5000
+15!5!*
+14!101!3!2-11-2013,11:00:00!500.00!2
+14!101!4!2-11-2013,14:00:00!570.00!2
+14!101!5!2-11-2013,17:00:00!590.00!3
+14!101!4!2-12-2013,00:00:59!630.00!2
+14!101!3!2-12-2013,03:00:00!650.00!2
+14!101!5!2-12-2013,10:29:50!670.00!3
+17!0
+14!400!1!2-12-2014,00:00:45!500.00!1
+14!400!9!2-15-2014,10:00:45!500.00!1
+14!400!2!2-13-2014,13:45:00!500.00!2
+18!fixed!2013
+14!401!3!2-11-2014,11:00:00!500.00!2
+14!401!5!2-11-2014,17:00:00!590.00!3
+14!401!5!2-12-2014,10:29:50!650.00!3
+18!auction!2013
+18!both!2012
+19!11!2013
+19!1!2013
+19!9!2013
+19!2!2013
+19!10!2013
+14!102!5!2-12-2013,00:00:00!110.00!1
+14!102!6!2-12-2013,01:00:00!120.00!2
+14!102!5!2-12-2013,01:45:00!130.00!3
+14!402!5!2-12-2014,00:00:00!150.00!1
+14!402!6!2-12-2014,01:00:00!170.00!2
+14!402!5!2-12-2014,01:45:00!190.00!3
+14!102!6!2-12-2013,02:10:00!140.00!3
+14!200!6!2-14-2013,12:00:00!99.85!1
+14!200!7!2-14-2013,13:55:00!99.85!1
+14!200!8!2-15-2013,14:00:00!99.85!1
+14!201!9!2-15-2013,20:00:00!30.45!3
+14!201!10!2-15-2013,21:00:00!40.45!3
+14!201!9!2-15-2013,21:30:00!45.45!3
+14!201!1!2-16-2013,00:05:00!60.00!3
+14!201!10!2-16-2013,01:05:00!65.45!3
+14!201!9!2-15-2013,01:06:00!72.00!3
+14!201!10!2-15-2013,02:05:00!82.00!3
+18!fixed!2013
+18!auction!2013
+18!BoTh!2013
+14!202!9!2-9-2013,23:01:00!30.00!5
+14!202!8!2-9-2013,23:55:00!50.00!5
+14!202!9!2-10-2013,00:01:00!60.00!5
+14!202!8!2-10-2013,01:01:00!80.00!5
+14!202!1!2-10-2013,01:02:00!94.45!1
+14!202!9!2-10-2013,13:01:00!90.00!5
+14!202!3!2-10-2013,23:01:00!94.45!1
+14!300!5!2-11-2013,01:01:00!30.00!2
+14!300!6!2-11-2013,01:10:00!45.00!3
+14!300!5!2-11-2013,01:30:00!55.00!2
+14!300!6!2-11-2013,02:01:00!60.00!3
+14!300!5!2-11-2013,03:01:00!69.00!2
+14!300!4!2-12-2013,11:30:00!75.00!1
+14!300!5!2-12-2013,19:25:00!75.00!1
+14!301!3!2-11-2013,13:00:00!55.00!2
+14!301!7!2-11-2013,14:00:00!65.00!2
+14!301!3!2-11-2013,14:12:00!80.00!2
+14!301!7!2-11-2013,14:50:00!95.00!2
+14!301!3!2-11-2013,17:00:00!105.30!2
+14!301!10!2-12-2013,13:00:00!109.00!1
+14!302!2!2-16-2013,13:00:00!44.99!1
+14!302!9!2-17-2013,00:30:00!44.99!1
+14!303!1!2-16-2013,12:30:00!12.00!1
+14!303!2!2-16-2013,13:30:00!17.99!1
+14!303!2!2-16-2013,13:35:00!22.99!1
+14!303!2!2-16-2013,14:30:00!28.99!1
+18!fixed!2013
+18!auction!2013
+18!BoTh!2013
+14!502!9!2-9-2014,23:01:00!130.00!5
+14!502!8!2-9-2014,23:55:00!150.00!5
+14!502!9!2-10-2014,00:01:00!160.00!5
+14!502!8!2-10-2014,01:01:00!180.00!5
+14!502!1!2-10-2014,01:02:00!194.45!1
+14!502!9!2-10-2014,13:01:00!190.00!5
+14!502!3!2-10-2014,23:01:00!194.45!1
+14!600!5!2-11-2014,01:01:00!60.00!2
+14!600!6!2-11-2014,01:10:00!75.00!3
+14!600!5!2-11-2014,01:30:00!85.00!2
+14!600!6!2-11-2014,02:01:00!90.00!3
+14!600!5!2-11-2014,03:01:00!115.00!2
+14!600!4!2-12-2014,11:30:00!112.00!1
+14!600!5!2-12-2014,19:25:00!115.00!1
+14!601!3!2-11-2014,13:00:00!55.00!2
+14!601!7!2-11-2014,14:00:00!65.00!2
+14!601!3!2-11-2014,14:12:00!80.00!2
+14!601!7!2-11-2014,14:50:00!95.00!2
+14!601!3!2-11-2014,17:00:00!105.30!2
+14!601!10!2-12-2014,13:00:00!118.00!3
+14!602!2!2-16-2014,13:00:00!55.99!1
+14!602!9!2-17-2014,00:30:00!55.99!1
+14!603!2!2-16-2014,14:30:00!28.99!1
+18!fixed!2014
+18!auction!2014
+18!BoTh!2014
+19!21!2013
+19!1!2013
+19!2!2013
+19!2!2013
+19!4!2013
+19!5!2013
+19!6!2013
+19!7!2013
+19!8!2013
+19!9!2013
+19!10!2013
+16!1!12!31
+16!2!2!22
+16!3!6!3
+16!4!12!6000
+16!6!5!19
+16!7!1!10000
+18!*!2013
+17!0
+15!1!4-30-2014
+19!2!2014
+19!4!2014
+19!5!2014
+19!6!2014
+19!7!2014
+20
+21!*
+21!4
+21!10
+21!12
+21!3
+end

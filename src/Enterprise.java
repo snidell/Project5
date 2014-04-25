@@ -739,7 +739,7 @@ public void getRevenue(int year, String type,PrintWriter foutput){
   
   /**
    * 
-   * @return returns current employed employees
+   * @return returns current customers
    */
   public ArrayList<Customer> getCustomers(){
 	  return customers;

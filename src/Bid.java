@@ -17,7 +17,7 @@ import java.math.*;
 import java.text.*;
 import java.util.*;
 
-public class Bid implements Proj3Constants,DateConstants{
+public class Bid implements Proj3Constants,DateConstants, Comparable<Bid>{
   
   private int userID;
   private int itemID;
@@ -126,6 +126,14 @@ public class Bid implements Proj3Constants,DateConstants{
   public int getUserID(){
 	  return this.userID;
   }
+  /**
+   * method that compares the dates of each bid most recent bid to least recent
+   * @param Bid bid being compared to
+   * 
+   */
+  public int compareTo(Bid bid){
+	  return -this.bidDate.compareTo(bid.bidDate);
+  }
     
   
   /**
@@ -164,7 +172,7 @@ public class Bid implements Proj3Constants,DateConstants{
   
   int userID4=014;
   int itemID4=190;
-  DateTime bidDate4= new DateTime("2-11-2014,14:00:00");
+  DateTime bidDate4= new DateTime("2-14-2014,14:00:00");
   double bidAmount4=233.00;
   int bidQTY4= 9;
   
@@ -178,9 +186,43 @@ public class Bid implements Proj3Constants,DateConstants{
   System.out.println(bid3);
   System.out.println(bid4);
   
-
-    
-    
+  ArrayList<Bid> bids = new ArrayList<Bid>();
+  
+  bids.add(bid1);
+  bids.add(bid2);
+  bids.add(bid3);
+  bids.add(bid4);
+  
+  System.out.println("Before sort-----------");
+  for (int i=0;i<bids.size();i++){
+	  System.out.println(bids.get(i));
+  
   }
+  Collections.sort(bids, new DateTimeComparator()); //sort some bids! Testing PartA of Proj5
+  System.out.println("Before after sort-----------");
+  for (int i=0;i<bids.size();i++){
+	  System.out.println(bids.get(i));
+  }
+  
+  ArrayList<Bid> bids1 = new ArrayList<Bid>();
+  bids1.add(bid1);
+  bids1.add(bid2);
+  bids1.add(bid3);
+  bids1.add(bid4);
+  
+  System.out.println("Before sort-----------");
+  for (int i=0;i<bids1.size();i++){
+	  System.out.println(bids1.get(i));
+  
+  }
+  Collections.sort(bids1); //sort some bids! Testing PartB of proj5
+  System.out.println("Before after sort-----------");
+  for (int i=0;i<bids1.size();i++){
+	  System.out.println(bids1.get(i));
+  }
+  
+  
+  }
+ 
   
 }
